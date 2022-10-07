@@ -1,5 +1,8 @@
 package com.company;
-
+/**
+ * @author Ece Özaydın
+ * @date 7.10.2022
+ * */
 public class Employee {
     String name;
     int salary;
@@ -17,6 +20,10 @@ public class Employee {
         this.hireYear = hireYear;
 
     }
+    /**
+     * Calculates tax, if users salary is higher than 1000 lira.
+     * */
+    //calculates tax, if users salary is higher than 1000 lira.
     public double tax(int salary) {
         double tax = 0;
         if (salary < 1000) {
@@ -26,7 +33,10 @@ public class Employee {
         }
         return tax;
     }
-
+    /**
+     * If employee's working hours is bigger than 40 hour,
+     * company gives bonus as 30 lira for every hour.
+     * */
     public int bonus(int workHours){
         int bonus=0;
         if (workHours>40){
@@ -39,6 +49,11 @@ public class Employee {
         return bonus;
     }
 
+    /**
+     * Raising amount calculates on the current salary of the employee.
+     * Current salary is calculated with tax and bonus which have
+     * affects on the current amount of the salary.
+     * */
     public double raiseSalary(int hireYear, int salary, int workHours){
         double currentSalary=salary-tax(salary)+bonus(workHours);
         int currentYear=2021;
